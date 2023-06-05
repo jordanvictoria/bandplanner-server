@@ -1,0 +1,11 @@
+[
+    {
+        "model": "bandplannerapi.song",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "name": "Pretty Baby",
+            "notes": "Roland spd-sx track 3"
+        }
+    }
+]

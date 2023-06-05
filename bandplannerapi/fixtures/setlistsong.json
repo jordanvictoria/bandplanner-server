@@ -1,0 +1,11 @@
+[
+    {
+        "model": "bandplannerapi.setlistsong",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "setlist": 1,
+            "song": 1
+        }
+    }
+]

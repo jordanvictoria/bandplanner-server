@@ -1,0 +1,21 @@
+[
+    {
+        "model": "bandplannerapi.event",
+        "pk": 1,
+        "fields": {
+            "event": 1,
+            "city_state": "Nashville, TN",
+            "venue": "Random Sample",
+            "band_info": "Solo set",
+            "age_requirement": "All ages",
+            "ticket_price": 10.00,
+            "ticket_link": null,
+            "guarantee": null,
+            "sold_out": false,
+            "announced": true,
+            "flier": null,
+            "stage_plot": null,
+            "input_list": null
+        }
+    }
+]

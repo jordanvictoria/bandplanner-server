@@ -1,0 +1,37 @@
+[
+    {
+        "model": "bandplannerapi.eventtype",
+        "pk": 1,
+        "fields": {
+            "label": "Single Release"
+        }
+    },
+    {
+        "model": "bandplannerapi.eventtype",
+        "pk": 2,
+        "fields": {
+            "label": "Bundle Release"
+        }
+    },
+    {
+        "model": "bandplannerapi.eventtype",
+        "pk": 3,
+        "fields": {
+            "label": "Rehearsal"
+        }
+    },
+    {
+        "model": "bandplannerapi.eventtype",
+        "pk": 4,
+        "fields": {
+            "label": "Gig"
+        }
+    },
+    {
+        "model": "bandplannerapi.eventtype",
+        "pk": 5,
+        "fields": {
+            "label": "Other"
+        }
+    }
+]

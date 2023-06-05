@@ -1,0 +1,14 @@
+[
+    {
+        "model": "bandplannerapi.pressclipping",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "title": "Heaven Honey’s Jordan Victoria Gets By With a Little Help From Her Friends",
+            "date": "2021-11-04",
+            "author": "Brittany McKenna",
+            "description": "Interview ahead of 2021 Fall tour with Zilched",
+            "link": "https://www.nashvillescene.com/music/features/heaven-honey-s-jordan-victoria-gets-by-with-a-little-help-from-her-friends/article_cea60e90-3c2b-11ec-a023-430773f7e950.html"
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "model": "bandplannerapi.mediatype",
+        "pk": 1,
+        "fields": {
+            "label": "blog"
+        }
+    },
+    {
+        "model": "bandplannerapi.mediatype",
+        "pk": 2,
+        "fields": {
+            "label": "magazine"
+        }
+    },
+    {
+        "model": "bandplannerapi.mediatype",
+        "pk": 3,
+        "fields": {
+            "label": "newspaper"
+        }
+    },
+    {
+        "model": "bandplannerapi.mediatype",
+        "pk": 4,
+        "fields": {
+            "label": "radio"
+        }
+    }
+]

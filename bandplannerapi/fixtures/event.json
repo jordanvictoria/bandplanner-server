@@ -1,0 +1,14 @@
+[
+    {
+        "model": "bandplannerapi.event",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "event_type": 4,
+            "title": "Zilched, Spoils, Heaven Honey, and Total Wife at Random Sample",
+            "date": "2023-06-24",
+            "time": "19:00",
+            "description": null
+        }
+    }
+]

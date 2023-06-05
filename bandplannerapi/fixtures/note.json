@@ -1,0 +1,13 @@
+[
+    {
+        "model": "bandplannerapi.note",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "title": "Pretty baby lyrics",
+            "content": "Hurts me when you leave way down deep inside virginity guaranteed, I closed my eyes waisted, reckless, lightweight night dress. I’m burning bright like I was born to do and I learned how to make love from watching you. I’m learning how to love Baby’s coming out tonight baby wants to treat you right baby’s going back to bed wants to be alone instead get into trouble just to pass the time. I love you more than beans and rice. Goldmine waistline, sleep tight, red light you’re just trying to give me what I need but I don’t understand what that means. No, I don’t understand.",
+            "date_created": "2023-05-28",
+            "last_edited": null
+        }
+    }
+]
