@@ -1,6 +1,6 @@
 [
     {
-        "model": "bandplannerapi.event",
+        "model": "bandplannerapi.gig",
         "pk": 1,
         "fields": {
             "event": 1,
@@ -9,13 +9,13 @@
             "band_info": "Solo set",
             "age_requirement": "All ages",
             "ticket_price": 10.00,
-            "ticket_link": null,
-            "guarantee": null,
+            "ticket_link": "",
+            "guarantee": 0,
             "sold_out": false,
             "announced": true,
-            "flier": null,
-            "stage_plot": null,
-            "input_list": null
+            "flier": "https://images.squarespace-cdn.com/content/v1/55e4caf9e4b0c5db7a902092/1684781712645-68E19VHITD7SGF00JES7/Nashville.png",
+            "stage_plot": "https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2019/07/17030020/make-stage-plot.jpg",
+            "input_list": "https://images.squarespace-cdn.com/content/v1/5a47824318b27decdf62b3c3/1569437490455-2GYGK0UN6VBJ19BT9UBE/Input+list+excerpt.png"
         }
     }
 ]

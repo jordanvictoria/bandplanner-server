@@ -1,0 +1,19 @@
+[
+    {
+        "model": "bandplannerapi.singlerelease",
+        "pk": 1,
+        "fields": {
+            "event": 3,
+            "song_title": "Moan",
+            "genre": "Alternative pop",
+            "upc": 0,
+            "isrc": 0,
+            "composer": "Jordan Victoria",
+            "producer": "Ben Lumsdaine, Oliver Hopkins",
+            "explicit": false,
+            "audio_url": "https://www.dropbox.com/s/2nvo2ng82gchfnp/HH_Moan_trackingmix_220202.mp3?dl=0",
+            "artwork": "",
+            "uploaded_to_distro": false
+        }
+    }
+]

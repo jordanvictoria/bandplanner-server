@@ -1,0 +1,41 @@
+[
+    {
+        "model": "bandplannerapi.bundlesong",
+        "pk": 1,
+        "fields": {
+            "bundle": 1,
+            "song_title": "Pretty Baby",
+            "genre": "Folk pop",
+            "isrc": 0,
+            "composer": "Jordan Victoria",
+            "producer": "Oliver Hopkins",
+            "explicit": false
+        }
+    },
+    {
+        "model": "bandplannerapi.bundlesong",
+        "pk": 2,
+        "fields": {
+            "bundle": 1,
+            "song_title": "Sexual Jealousy",
+            "genre": "Folk pop",
+            "isrc": 0,
+            "composer": "Jordan Victoria",
+            "producer": "Oliver Hopkins",
+            "explicit": false
+        }
+    },
+    {
+        "model": "bandplannerapi.bundlesong",
+        "pk": 3,
+        "fields": {
+            "bundle": 1,
+            "song_title": "Everybody knows",
+            "genre": "Folk pop",
+            "isrc": 0,
+            "composer": "Jordan Victoria",
+            "producer": "Oliver Hopkins",
+            "explicit": false
+        }
+    }
+]

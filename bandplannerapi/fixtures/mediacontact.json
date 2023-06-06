@@ -6,10 +6,10 @@
             "user": 1,
             "organization": "Acme Radio",
             "contact": "Preston Evans",
-            "role": null,
+            "role": "",
             "location": "Nashville",
             "email": "pevans@theacmenashville.com",
-            "website": null,
+            "website": "",
             "notes": "Booked record store day at the Groove 2021",
             "media_type": 4
         }

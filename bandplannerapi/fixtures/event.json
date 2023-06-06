@@ -8,7 +8,55 @@
             "title": "Zilched, Spoils, Heaven Honey, and Total Wife at Random Sample",
             "date": "2023-06-24",
             "time": "19:00",
-            "description": null
+            "description": ""
+        }
+    },
+    {
+        "model": "bandplannerapi.event",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "event_type": 3,
+            "title": "Indianapolis Rehearsal",
+            "date": "2023-09-09",
+            "time": "00:00:00",
+            "description": "Russian 20year Anniversary show"
+        }
+    },
+    {
+        "model": "bandplannerapi.event",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "event_type": 1,
+            "title": "Moan Single Release",
+            "date": "2023-09-30",
+            "time": "00:00:00",
+            "description": "00:00:00"
+        }
+    },
+    {
+        "model": "bandplannerapi.event",
+        "pk": 4,
+        "fields": {
+            "user": 1,
+            "event_type": 2,
+            "title": "EP Release",
+            "date": "2023-11-10",
+            "time": "00:00:00",
+            "description": "Fall EP with 4 or 5 new songs"
+        }
+    },
+    {
+        "model": "bandplannerapi.event",
+        "pk": 5,
+        "fields": {
+            "user": 1,
+            "event_type": 5,
+            "title": "Moan Music Video Shoot",
+            "date": "2023-07-24",
+            "time": "00:00:00",
+            "description": "Shoot with Kevin, Kirt and Josh in LA"
         }
     }
 ]
