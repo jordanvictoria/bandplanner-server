@@ -13,4 +13,5 @@ from .pressclipping import PressClippingView
 from .mediacontact import MediaContactView
 from .setlist import SetlistView
 from .song import SongView
-from .setlistsong
+from .setlistsong import SetlistSongView
+from .auth import login_user, register_user

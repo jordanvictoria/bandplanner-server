@@ -20,6 +20,7 @@ class MediaTypeView(ViewSet):
             media_type = MediaType.objects.get(pk=pk)
             serializer = MediaTypeSerializer(media_type)
             return Response(serializer.data)
+            
         except MediaType.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 

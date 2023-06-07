@@ -1,0 +1,1 @@
+DROP TABLE bandplannerapi_setlistsong

@@ -5,7 +5,8 @@
         "fields": {
             "user": 1,
             "setlist": 1,
-            "song": 1
+            "song": 1,
+            "notes": "Roland spd-sx track 3"
         }
     }
 ]

@@ -89,7 +89,7 @@ class UserSerializer(serializers.ModelSerializer):
     """For users."""
     class Meta:
         model = BandUser
-        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok' 'full_name')
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name')
 
 
 class PressClippingSerializer(serializers.ModelSerializer):

@@ -80,13 +80,13 @@ class SongView(ViewSet):
 class CreateSongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
-        fields = ['id', 'user', 'name', 'notes']
+        fields = ['id', 'user', 'name']
 
 class UserSerializer(serializers.ModelSerializer):
     """For users."""
     class Meta:
         model = BandUser
-        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok' 'full_name')
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name')
 
 
 class SongSerializer(serializers.ModelSerializer):
@@ -96,5 +96,5 @@ class SongSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Song
-        fields = ('id', 'user', 'name', 'notes')
+        fields = ('id', 'user', 'name')
         depth = 1
