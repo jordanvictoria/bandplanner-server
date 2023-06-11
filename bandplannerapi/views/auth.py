@@ -65,5 +65,11 @@ def register_user(request):
     token = Token.objects.create(user=band_user.user)
 
     # Return the token to the client
-    data = { 'token': token.key, 'valid': True, 'user_id': band_user.user.id }
+    data = { 'token': token.key }
     return Response(data)
+
+
+    # -- Taken out of line 68
+    #  'valid': True, 'user_id': band_user.user.id 
+
+    
