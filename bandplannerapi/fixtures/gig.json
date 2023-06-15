@@ -3,6 +3,7 @@
         "model": "bandplannerapi.gig",
         "pk": 1,
         "fields": {
+            "user": 1,
             "event": 1,
             "city_state": "Nashville, TN",
             "venue": "Random Sample",

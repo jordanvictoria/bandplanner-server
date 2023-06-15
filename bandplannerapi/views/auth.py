@@ -72,4 +72,3 @@ def register_user(request):
     # -- Taken out of line 68
     #  'valid': True, 'user_id': band_user.user.id 
 
-    

@@ -4,6 +4,7 @@ from django.db import models
 
 class Gig(models.Model):
 
+    user = models.ForeignKey("BandUser", on_delete=models.CASCADE, related_name='gigs')
     event = models.ForeignKey("Event", on_delete=models.CASCADE, related_name='gigs')
     city_state = models.CharField(max_length=50)
     venue = models.CharField(max_length=50)

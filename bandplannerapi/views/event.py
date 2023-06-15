@@ -33,6 +33,14 @@ class EventView(ViewSet):
         """
 
         events = Event.objects.filter(user=request.auth.user.id)
+
+
+        e_type = request.query_params.get('event_type', None)
+        if e_type is not None:
+            type_object = EventType.objects.get(pk=e_type)
+            events = events.filter(event_type = type_object)
+
+
         serializer = EventSerializer(events, many=True)
         return Response(serializer.data)
 

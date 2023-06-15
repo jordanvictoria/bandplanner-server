@@ -3,6 +3,7 @@
         "model": "bandplannerapi.bundlerelease",
         "pk": 1,
         "fields": {
+            "user": 1,
             "event": 4,
             "bundle_title": "Untitled EP",
             "genre": "Folk pop",

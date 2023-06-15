@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from bandplannerapi.models import BundleSong, BundleRelease
+from bandplannerapi.models import BundleSong, BundleRelease, BandUser
 
 
 
@@ -42,10 +42,10 @@ class BundleSongView(ViewSet):
         Returns
             Response -- JSON serialized bundle song instance
         """
-        
+        current_user = BandUser.objects.get(user=request.auth.user)
         serializer = CreateBundleSongSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        serializer.save(user=current_user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def update(self, request, pk):
@@ -66,6 +66,9 @@ class BundleSongView(ViewSet):
         bundle = BundleRelease.objects.get(pk=request.data["bundle"])
         bundle_song.bundle = bundle
 
+        user = BandUser.objects.get(pk=request.data["user"])
+        bundle_song.user = user
+
         bundle_song.save()
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
@@ -83,7 +86,7 @@ class BundleSongView(ViewSet):
 class CreateBundleSongSerializer(serializers.ModelSerializer):
     class Meta:
         model = BundleSong
-        fields = ['id', 'bundle', 'song_title', 'genre', 'isrc', 'composer', 'producer', 'explicit']
+        fields = ['id', 'user', 'bundle', 'song_title', 'genre', 'isrc', 'composer', 'producer', 'explicit']
 
 
 
@@ -93,14 +96,21 @@ class BundleReleaseSerializer(serializers.ModelSerializer):
         model = BundleRelease
         fields = ('id', 'event', 'bundle_title', 'genre', 'upc', 'audio_url', 'artwork', 'uploaded_to_distro')
 
+class UserSerializer(serializers.ModelSerializer):
+    """For users."""
+    class Meta:
+        model = BandUser
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name')
+
 
 class BundleSongSerializer(serializers.ModelSerializer):
     """JSON serializer for bundle songs
     """
     bundle = BundleReleaseSerializer(many=False)
+    user = UserSerializer(many=False)
 
     class Meta:
         model = BundleSong
-        fields = ('id', 'bundle', 'song_title', 'genre', 'isrc', 'composer', 'producer', 'explicit')
+        fields = ('id', 'user', 'bundle', 'song_title', 'genre', 'isrc', 'composer', 'producer', 'explicit')
         depth = 1
         
