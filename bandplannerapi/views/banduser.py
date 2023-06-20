@@ -51,6 +51,7 @@ class BandUserView(ViewSet):
         band_user.twitter = request.data["twitter"]
         band_user.facebook = request.data["facebook"]
         band_user.tiktok = request.data["tiktok"]
+        band_user.photo = request.data["photo"]
 
         band_user.save()
 
@@ -62,4 +63,4 @@ class BandUserSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = BandUser
-        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name')
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name', 'photo')

@@ -106,7 +106,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = BandUser
 
-        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name')
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name', 'photo')
 
 
 class SingleReleaseSerializer(serializers.ModelSerializer):

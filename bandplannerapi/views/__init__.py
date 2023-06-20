@@ -1,4 +1,4 @@
-from .bandphoto import BandPhotoView
+
 from .banduser import BandUserView
 from .eventtype import EventTypeView
 from .mediatype import MediaTypeView

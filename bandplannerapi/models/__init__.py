@@ -1,5 +1,4 @@
 from .banduser import BandUser
-from .bandphoto import BandPhoto
 from .bundlerelease import BundleRelease
 from .bundlesong import BundleSong
 from .event import Event
