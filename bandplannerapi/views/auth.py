@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from bandplannerapi.models import BandUser
+from rest_framework import status
 
 
 
@@ -34,8 +35,9 @@ def login_user(request):
         return Response(data)
     else:
         # Bad login details were provided. So we can't log the user in.
-        data = { 'valid': False }
+        data = {'valid': False}
         return Response(data)
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -45,6 +47,13 @@ def register_user(request):
     Method arguments:
       request -- The full HTTP request object
     '''
+
+    email = request.data['email']
+    existing_user = User.objects.filter(email=email).first()
+
+    if existing_user:
+        data = {'error': 'Email already in use.'}
+        return Response(data, status=status.HTTP_400_BAD_REQUEST)
 
     # Create a new user by invoking the `create_user` helper method
     # on Django's built-in User model
@@ -65,10 +74,5 @@ def register_user(request):
     token = Token.objects.create(user=band_user.user)
 
     # Return the token to the client
-    data = { 'token': token.key }
+    data = {'token': token.key}
     return Response(data)
-
-
-    # -- Taken out of line 68
-    #  'valid': True, 'user_id': band_user.user.id 
-
