@@ -85,7 +85,7 @@ class SetlistSongView(ViewSet):
 class CreateSetlistSongSerializer(serializers.ModelSerializer):
     class Meta:
         model = SetlistSong
-        fields = ['id', 'setlist', 'song', 'notes']
+        fields = ['id', 'user', 'setlist', 'song', 'notes']
 
 
 class SetlistSerializer(serializers.ModelSerializer):
@@ -105,7 +105,7 @@ class UserSetlistSongSerializer(serializers.ModelSerializer):
     """For users."""
     class Meta:
         model = BandUser
-        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name')
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name', 'photo')
 
 
 
@@ -119,5 +119,5 @@ class SetlistSongSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SetlistSong
-        fields = ('id', 'setlist', 'song', 'notes')
+        fields = ('id', 'user', 'setlist', 'song', 'notes')
         depth = 2

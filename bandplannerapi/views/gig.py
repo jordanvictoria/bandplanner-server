@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from bandplannerapi.models import Gig, Event
+from bandplannerapi.models import Gig, Event, BandUser
 
 
 
@@ -42,10 +42,10 @@ class GigView(ViewSet):
         Returns
             Response -- JSON serialized gig instance
         """
-        
+        current_user = BandUser.objects.get(user=request.auth.user)
         serializer = CreateGigSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        serializer.save(user=current_user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def update(self, request, pk):
@@ -72,6 +72,9 @@ class GigView(ViewSet):
         gig_event = Event.objects.get(pk=request.data["event"])
         gig.event = gig_event
 
+        user = BandUser.objects.get(pk=request.data["user"])
+        gig.user = user
+
         gig.save()
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
@@ -89,7 +92,7 @@ class GigView(ViewSet):
 class CreateGigSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gig
-        fields = ['id', 'event', 'city_state', 'venue', 'band_info', 'age_requirement', 'ticket_price', 'ticket_link', 'guarantee', 'sold_out', 'announced', 'flier', 'stage_plot', 'input_list']
+        fields = ['id', 'user', 'event', 'city_state', 'venue', 'band_info', 'age_requirement', 'ticket_price', 'ticket_link', 'guarantee', 'sold_out', 'announced', 'flier', 'stage_plot', 'input_list']
 
 
 
@@ -99,14 +102,21 @@ class EventSerializer(serializers.ModelSerializer):
         model = Event
         fields = ('id', 'user', 'event_type', 'title', 'date', 'time', 'description')
 
+class UserSerializer(serializers.ModelSerializer):
+    """For users."""
+    class Meta:
+        model = BandUser
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name','photo')
+
 
 class GigSerializer(serializers.ModelSerializer):
     """JSON serializer for gigs
     """
     event = EventSerializer(many=False)
+    user = UserSerializer(many=False)
 
     class Meta:
         model = Gig
-        fields = ('id', 'event', 'city_state', 'venue', 'band_info', 'age_requirement', 'ticket_price', 'ticket_link', 'guarantee', 'sold_out', 'announced', 'flier', 'stage_plot', 'input_list')
+        fields = ('id', 'user', 'event', 'city_state', 'venue', 'band_info', 'age_requirement', 'ticket_price', 'ticket_link', 'guarantee', 'sold_out', 'announced', 'flier', 'stage_plot', 'input_list')
         depth = 1
         

@@ -3,6 +3,7 @@
         "model": "bandplannerapi.bundlesong",
         "pk": 1,
         "fields": {
+            "user": 1,
             "bundle": 1,
             "song_title": "Pretty Baby",
             "genre": "Folk pop",
@@ -16,6 +17,7 @@
         "model": "bandplannerapi.bundlesong",
         "pk": 2,
         "fields": {
+            "user": 1,
             "bundle": 1,
             "song_title": "Sexual Jealousy",
             "genre": "Folk pop",
@@ -29,6 +31,7 @@
         "model": "bandplannerapi.bundlesong",
         "pk": 3,
         "fields": {
+            "user": 1,
             "bundle": 1,
             "song_title": "Everybody knows",
             "genre": "Folk pop",

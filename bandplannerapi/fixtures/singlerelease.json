@@ -3,6 +3,7 @@
         "model": "bandplannerapi.singlerelease",
         "pk": 1,
         "fields": {
+            "user": 1,
             "event": 3,
             "song_title": "Moan",
             "genre": "Alternative pop",

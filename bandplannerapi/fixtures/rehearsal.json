@@ -3,6 +3,7 @@
         "model": "bandplannerapi.rehearsal",
         "pk": 1,
         "fields": {
+            "user": 1,
             "event": 2,
             "location": "Conner's house",
             "band_info": "Oliver on guitar, Gusti on bass, Conner on drums"

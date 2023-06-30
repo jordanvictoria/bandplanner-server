@@ -13,5 +13,54 @@
             "notes": "Booked record store day at the Groove 2021",
             "media_type": 4
         }
+        
+    },
+    {
+        "model": "bandplannerapi.mediacontact",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "organization": "Acme Radio",
+            "contact": "Pretzel Evans",
+            "role": "",
+            "location": "Nashville",
+            "email": "pevans@theacmenashville.com",
+            "website": "",
+            "notes": "Booked record store day at the Groove 2021",
+            "media_type": 1
+        }
+        
+    },
+    {
+        "model": "bandplannerapi.mediacontact",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "organization": "Acme Radio",
+            "contact": "Pebble Evans",
+            "role": "",
+            "location": "Nashville",
+            "email": "pevans@theacmenashville.com",
+            "website": "",
+            "notes": "Booked record store day at the Groove 2021",
+            "media_type": 2
+        }
+        
+    },
+    {
+        "model": "bandplannerapi.mediacontact",
+        "pk": 4,
+        "fields": {
+            "user": 1,
+            "organization": "Acme Radio",
+            "contact": "Pesto Evans",
+            "role": "",
+            "location": "Nashville",
+            "email": "pevans@theacmenashville.com",
+            "website": "",
+            "notes": "Booked record store day at the Groove 2021",
+            "media_type": 3
+        }
+        
     }
 ]

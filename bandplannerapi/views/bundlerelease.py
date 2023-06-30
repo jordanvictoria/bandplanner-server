@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from bandplannerapi.models import BundleRelease, Event
+from bandplannerapi.models import BundleRelease, Event, BandUser
 
 
 
@@ -42,10 +42,10 @@ class BundleReleaseView(ViewSet):
         Returns
             Response -- JSON serialized bundle release instance
         """
-        
+        current_user = BandUser.objects.get(user=request.auth.user)
         serializer = CreateBundleReleaseSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        serializer.save(user=current_user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def update(self, request, pk):
@@ -66,6 +66,9 @@ class BundleReleaseView(ViewSet):
         bundle_event = Event.objects.get(pk=request.data["event"])
         bundle_release.event = bundle_event
 
+        user = BandUser.objects.get(pk=request.data["user"])
+        bundle_release.user = user
+
         bundle_release.save()
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
@@ -83,8 +86,14 @@ class BundleReleaseView(ViewSet):
 class CreateBundleReleaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = BundleRelease
-        fields = ['id', 'event', 'bundle_title', 'genre', 'upc', 'audio_url', 'artwork', 'uploaded_to_distro']
+        fields = ['id', 'user', 'event', 'bundle_title', 'genre', 'upc', 'audio_url', 'artwork', 'uploaded_to_distro']
 
+
+class UserSerializer(serializers.ModelSerializer):
+    """For users."""
+    class Meta:
+        model = BandUser
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name', 'photo')
 
 
 class EventSerializer(serializers.ModelSerializer):
@@ -98,9 +107,10 @@ class BundleReleaseSerializer(serializers.ModelSerializer):
     """JSON serializer for bundle releases
     """
     event = EventSerializer(many=False)
+    user = UserSerializer(many=False)
 
     class Meta:
         model = BundleRelease
-        fields = ('id', 'event', 'bundle_title', 'genre', 'upc', 'audio_url', 'artwork', 'uploaded_to_distro')
+        fields = ('id', 'user', 'event', 'bundle_title', 'genre', 'upc', 'audio_url', 'artwork', 'uploaded_to_distro')
         depth = 1
         

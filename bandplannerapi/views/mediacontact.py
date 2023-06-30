@@ -33,6 +33,12 @@ class MediaContactView(ViewSet):
         """
 
         media_contacts = MediaContact.objects.filter(user=request.auth.user.id)
+
+        m_type = request.query_params.get('media_type', None)
+        if m_type is not None:
+            type_object = MediaType.objects.get(pk=m_type)
+            media_contacts = media_contacts.filter(media_type = type_object)
+
         serializer = MediaContactSerializer(media_contacts, many=True)
         return Response(serializer.data)
 
@@ -88,13 +94,13 @@ class MediaContactView(ViewSet):
 class CreateMediaContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = MediaContact
-        fields = ['id', 'user', 'event_type', 'organization', 'contact', 'role', 'location', 'email', 'website', 'notes', 'media_type']
+        fields = ['id', 'user', 'media_type', 'organization', 'contact', 'role', 'location', 'email', 'website', 'notes', 'media_type']
 
 class UserSerializer(serializers.ModelSerializer):
     """For users."""
     class Meta:
         model = BandUser
-        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name')
+        fields = ('id', 'user', 'project_title', 'bio', 'streaming', 'website', 'instagram', 'twitter', 'facebook', 'tiktok', 'full_name', 'photo')
 
 class MediaTypeSerializer(serializers.ModelSerializer):
     """For event types."""
@@ -111,5 +117,5 @@ class MediaContactSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MediaContact
-        fields = ('id', 'user', 'event_type', 'organization', 'contact', 'role', 'location', 'email', 'website', 'notes', 'media_type')
+        fields = ('id', 'user', 'media_type', 'organization', 'contact', 'role', 'location', 'email', 'website', 'notes', 'media_type')
         depth = 1

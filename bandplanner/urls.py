@@ -18,11 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from bandplannerapi.views import login_user, register_user, BandPhotoView, BandUserView, BundleReleaseView, BundleSongView, EventView, EventTypeView, GigView, MediaContactView, MediaTypeView, NoteView, PressClippingView, RehearsalView, SetlistView, SetlistSongView, SingleReleaseView, SongView
+from bandplannerapi.views import login_user, register_user, BandUserView, BundleReleaseView, BundleSongView, EventView, EventTypeView, GigView, MediaContactView, MediaTypeView, NoteView, PressClippingView, RehearsalView, SetlistView, SetlistSongView, SingleReleaseView, SongView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'bandphotos', BandPhotoView, 'bandphoto')
 router.register(r'bandusers', BandUserView, 'banduser')
 router.register(r'bundlereleases', BundleReleaseView, 'bundlerelease')
 router.register(r'bundlesongs', BundleSongView, 'bundlesong')

@@ -4,6 +4,7 @@ from django.db import models
 
 class SingleRelease(models.Model):
 
+    user = models.ForeignKey("BandUser", on_delete=models.CASCADE, related_name='singlereleases')
     event = models.ForeignKey("Event", on_delete=models.CASCADE, related_name='singlereleases')
     song_title = models.CharField(max_length=50)
     genre = models.CharField(max_length=50, blank=True)
