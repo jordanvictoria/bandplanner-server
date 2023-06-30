@@ -20,7 +20,7 @@ Features include:
 * Users can upload photos to their user profile with a Cloudinary widget
 
 ## ERD
-<img src="src/components/nav/erd-bp.png">
+<img src="erd-bp.png">
 
 <!--
  ##Video Walkthrough
