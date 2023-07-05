@@ -22,11 +22,16 @@ Features include:
 ## ERD
 <img src="erd-bp.png">
 
+## Video Walkthrough
+
+[![Video Walkthrough](https://img.youtube.com/vi/pgajnk7rkog/0.jpg)](https://www.youtube.com/watch?v=pgajnk7rkog)
+
+
+
+
+
+
 <!--
- ##Video Walkthrough
-
-
-
 
 
 ## Public Link
