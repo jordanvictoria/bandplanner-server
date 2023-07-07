@@ -1,0 +1,1 @@
+web: gunicorn bandplanner.wsgi --log-file -
