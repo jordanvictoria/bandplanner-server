@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from os.path import join
+import os
 
 
 
@@ -25,7 +26,7 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bgd^vo129+*lt1-x7r8iyr)*+q$+ke&&ttkhrh4hw6c13im&=5'
+SECRET_KEY = os.environ.get('MY_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
