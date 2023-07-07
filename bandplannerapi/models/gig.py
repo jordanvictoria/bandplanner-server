@@ -6,8 +6,8 @@ class Gig(models.Model):
 
     user = models.ForeignKey("BandUser", on_delete=models.CASCADE, related_name='gigs')
     event = models.ForeignKey("Event", on_delete=models.CASCADE, related_name='gigs')
-    city_state = models.CharField(max_length=50)
-    venue = models.CharField(max_length=50)
+    city_state = models.CharField(max_length=200)
+    venue = models.CharField(max_length=200)
     band_info = models.TextField(max_length=500, blank=True)
     age_requirement = models.CharField(max_length=50, blank=True)
     ticket_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)

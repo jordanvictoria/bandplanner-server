@@ -6,7 +6,7 @@ class SingleRelease(models.Model):
 
     user = models.ForeignKey("BandUser", on_delete=models.CASCADE, related_name='singlereleases')
     event = models.ForeignKey("Event", on_delete=models.CASCADE, related_name='singlereleases')
-    song_title = models.CharField(max_length=50)
+    song_title = models.CharField(max_length=200)
     genre = models.CharField(max_length=50, blank=True)
     upc = models.IntegerField(blank=True)
     isrc = models.IntegerField(blank=True)
